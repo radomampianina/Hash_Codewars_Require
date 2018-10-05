@@ -31,15 +31,16 @@ return val
 end    
 
 def meal_weight_watchers(menu)
-   som = weight_watchers(menu["welsh"])
-   som1 = weight_watchers(menu["frites"])
-   som2 = weight_watchers(menu["biere"])
-   puts "#{som + som1 + som2}" 
+     m = menu.count - 1
+     som = 0
+     for long in 0..m do
+          k = menu.keys[long]    
+         som += weight_watchers(menu[k])
+         long += 1
+    end
+    puts som
 end
 def meal_price(menu)
     
 end
-# weight_watchers(welsh)
-# weight_watchers(frites)
-# weight_watchers(biere)
-puts menu
+meal_weight_watchers(menu)
